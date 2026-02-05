@@ -1,0 +1,39 @@
+h2 {
+  text-align: center;
+  margin-top: 2rem;
+  color: #a7f3d0;
+}
+
+form {
+  max-width: 350px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input,
+select,
+button {
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+button {
+  background: #34d399;
+  color: #033;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #6ee7b7;
+}
+
+#result {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+}

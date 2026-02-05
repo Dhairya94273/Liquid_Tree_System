@@ -1,0 +1,31 @@
+h2 {
+  text-align: center;
+  margin-top: 2rem;
+  color: #a7f3d0;
+}
+
+input {
+  display: block;
+  margin: 1rem auto;
+  width: 260px;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: none;
+}
+
+button {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.6rem 1.5rem;
+  background: #34d399;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#output {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+  color: #bbf7d0;
+}

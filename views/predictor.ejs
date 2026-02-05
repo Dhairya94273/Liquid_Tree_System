@@ -1,0 +1,15 @@
+<%- include("partials/header") %>
+
+<!-- PREDICTOR PAGE CSS -->
+<link rel="stylesheet" href="/css/predictor.css" />
+
+<h2>AQI Predictor</h2>
+
+<input id="currentAQI" type="number" placeholder="Current AQI" />
+<input id="trees" type="number" placeholder="Liquid Trees Count" />
+<button onclick="predict()">Predict</button>
+
+<p id="output"></p>
+
+<script src="/js/predictor.js"></script>
+<%- include("partials/footer") %>

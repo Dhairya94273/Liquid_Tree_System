@@ -1,0 +1,22 @@
+<%- include("partials/header") %>
+
+<!-- USER PAGE CSS -->
+<link rel="stylesheet" href="/css/user.css" />
+
+<h2>Check Your Area Air Quality</h2>
+
+<form id="aqiForm">
+  <input type="text" placeholder="Enter Pincode" required />
+  <select>
+    <option>Residential</option>
+    <option>Industrial</option>
+    <option>Commercial</option>
+    <option>Traffic-heavy</option>
+  </select>
+  <button type="submit">Check AQI</button>
+</form>
+
+<div id="result"></div>
+
+<script src="/js/user.js"></script>
+<%- include("partials/footer") %>

@@ -1,0 +1,22 @@
+.hero {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #0f3d2e, #041a12);
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #a7f3d0;
+  margin-bottom: 1rem;
+}
+
+.hero .quote {
+  font-size: 1.3rem;
+  color: #eafff3;
+  opacity: 0.85;
+  max-width: 600px;
+}
