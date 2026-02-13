@@ -1,12 +1,237 @@
 <%- include("partials/header") %>
 
 <!-- ABOUT PAGE CSS -->
-<link rel="stylesheet" href="/css/user.css" />
+<link rel="stylesheet" href="/css/about.css" />
 
-<h2>About Liquid Trees</h2>
-<p>
-Liquid Trees use microalgae to absorb CO₂ and release oxygen,
-making them ideal for dense urban environments.
-</p>
+<div class="about-hero">
+  <div class="hero-inner">
+    <h1>About <span class="highlight">Liquid Trees</span></h1>
+    <p class="lead">
+      Revolutionary bio-technology combining microalgae cultivation with urban air purification. 
+      Liquid Trees are vertical structures that photosynthesize CO₂ and produce oxygen, 
+      providing an efficient solution for combating air pollution in dense metropolitan areas.
+    </p>
+    <div class="hero-ctas">
+      <a href="#comparison" class="btn">See Comparison</a>
+      <a href="#benefits" class="btn ghost">Learn More</a>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT CARDS SECTION -->
+<div class="about-cards">
+  <div class="card">
+    <h3>What are Liquid Trees?</h3>
+    <p>
+      Liquid Trees are innovative outdoor installations that house microalgae (spirulina and chlorella) 
+      in transparent vertical bioreactors. These structures absorb CO₂ from the air and produce oxygen 
+      through photosynthesis, functioning like artificial trees but with superior efficiency.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>How They Work</h3>
+    <p>
+      The microalgae inside undergo photosynthesis, converting carbon dioxide into oxygen and biomass. 
+      This process is 5x more efficient than real trees due to the high concentration of algae cells. 
+      The system can absorb CO₂ from the surrounding air and release purified oxygen continuously.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Environmental Impact</h3>
+    <p>
+      One Liquid Tree can absorb as much CO₂ in a year as an actual tree absorbs in 10 years. 
+      This makes them ideal for urban environments where land is limited. They also improve 
+      the aesthetic appeal while actively purifying the air.
+    </p>
+  </div>
+</div>
+
+<!-- IMAGE GALLERY SECTION -->
+<div class="image-gallery-section">
+  <h2>Visual Overview</h2>
+  <p class="section-subtitle">Understanding Liquid Trees Technology</p>
+  
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <div class="gallery-image-wrapper">
+        <img 
+          src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=400&fit=crop" 
+          alt="Liquid Tree Bio-Reactor Structure - Vertical algae cultivation system"
+          loading="lazy"
+        />
+        <div class="gallery-overlay">
+          <h4>Advanced Bio-Reactor</h4>
+          <p>Vertical column structure with transparent chambers housing microalgae</p>
+        </div>
+      </div>
+      <h3>Liquid Tree Structure</h3>
+      <p>Modern bio-reactor design with transparent panels allowing sunlight for photosynthesis. Each unit spans 2-3 meters in height with optimized surface area for maximum CO₂ absorption.</p>
+    </div>
+
+    <div class="gallery-item">
+      <div class="gallery-image-wrapper">
+        <img 
+          src="https://images.pexels.com/photos/2325446/pexels-photo-2325446.jpeg?w=600&h=400&fit=crop" 
+          alt="Urban city pollution and air quality monitoring from above"
+          loading="lazy"
+        />
+        <div class="gallery-overlay">
+          <h4>Urban Air Quality</h4>
+          <p>Real-world implementation in dense metropolitan areas</p>
+        </div>
+      </div>
+      <h3>Urban Environmental Impact</h3>
+      <p>Liquid Trees address critical air pollution in cities where space is limited. Installation in urban corridors, rooftops, and public spaces creates measurable improvements in local air quality within weeks.</p>
+    </div>
+  </div>
+</div>
+
+<!-- COMPARISON SECTION -->
+<div class="about-benefits" id="comparison">
+  <h2>Liquid Trees vs Normal Trees</h2>
+  <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">
+    A comprehensive comparison of Liquid Trees and conventional trees in terms of CO₂ absorption, 
+    space efficiency, and environmental impact.
+  </p>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Liquid Trees</th>
+        <th>Normal Trees</th>
+        <th>Advantage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>CO₂ Absorption Rate</strong></td>
+        <td>~300-500 kg/year (per unit)</td>
+        <td>~20-30 kg/year</td>
+        <td class="positive">Liquid Trees ✓ (15-20x efficient)</td>
+      </tr>
+      <tr>
+        <td><strong>Space Required</strong></td>
+        <td>~2 m² footprint (vertical)</td>
+        <td>~4-6 m² canopy area</td>
+        <td class="positive">Liquid Trees ✓ (75% less space)</td>
+      </tr>
+      <tr>
+        <td><strong>Water Consumption</strong></td>
+        <td>~1000-2000 L/year (closed system)</td>
+        <td>~100,000+ L/year (depends on climate)</td>
+        <td class="positive">Liquid Trees ✓ (50x more efficient)</td>
+      </tr>
+      <tr>
+        <td><strong>Oxygen Production</strong></td>
+        <td>~2-4 kg/day per unit</td>
+        <td>~0.3 kg/day per tree</td>
+        <td class="positive">Liquid Trees ✓ (6-13x more O₂)</td>
+      </tr>
+      <tr>
+        <td><strong>Installation Time</strong></td>
+        <td>Days to weeks</td>
+        <td>Years to mature (20-30 years)</td>
+        <td class="positive">Liquid Trees ✓ (instant impact)</td>
+      </tr>
+      <tr>
+        <td><strong>Climate Dependence</strong></td>
+        <td>Year-round efficiency (controlled)</td>
+        <td>Seasonal (reduced in winter)</td>
+        <td class="positive">Liquid Trees ✓</td>
+      </tr>
+      <tr>
+        <td><strong>Maintenance Cost</strong></td>
+        <td>₹2,000-5,000/month</td>
+        <td>₹500-1,500/year (after establishment)</td>
+        <td class="negative">Normal Trees ✓</td>
+      </tr>
+      <tr>
+        <td><strong>Initial Cost</strong></td>
+        <td>₹3-8 Lakhs per unit</td>
+        <td>₹500-5,000 per tree</td>
+        <td class="negative">Normal Trees ✓</td>
+      </tr>
+      <tr>
+        <td><strong>Aesthetic Appeal</strong></td>
+        <td>Modern, futuristic design</td>
+        <td>Natural, organic appearance</td>
+        <td>Subjective</td>
+      </tr>
+      <tr>
+        <td><strong>Additional Benefits</strong></td>
+        <td>Edible biomass, biofuel production</td>
+        <td>Shade, food, wildlife habitat</td>
+        <td>Different benefits</td>
+      </tr>
+      <tr>
+        <td><strong>Lifespan</strong></td>
+        <td>10-15 years (replaceable components)</td>
+        <td>50-200+ years (depends on species)</td>
+        <td class="negative">Normal Trees ✓</td>
+      </tr>
+      <tr>
+        <td><strong>Urban Suitability</strong></td>
+        <td class="positive">✓ Excellent (compact, no land needed)</td>
+        <td>Limited (space & root constraints)</td>
+        <td class="positive">Liquid Trees ✓</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 style="margin-top: 3rem;" id="benefits">Key Benefits of Liquid Trees</h2>
+  <div class="benefits-grid">
+    <div class="benefit">
+      <h4>⚡ Superior Efficiency</h4>
+      <p>
+        One Liquid Tree produces as much oxygen as 10 normal trees 
+        and absorbs CO₂ 15-20 times faster. Perfect for rapid air 
+        quality improvement in urban areas.
+      </p>
+    </div>
+
+    <div class="benefit">
+      <h4>🏙️ Space Optimization</h4>
+      <p>
+        Vertical design requires 75% less space compared to traditional trees. 
+        Can be installed on rooftops, balconies, and narrow urban streets.
+      </p>
+    </div>
+
+    <div class="benefit">
+      <h4>💧 Water Conservation</h4>
+      <p>
+        Closed-loop system uses 50x less water than traditional trees. 
+        Ideal for water-scarce regions and arid climates.
+      </p>
+    </div>
+
+    <div class="benefit">
+      <h4>⏱️ Immediate Impact</h4>
+      <p>
+        Starts working instantly after installation, unlike trees that take 20-30 years 
+        to reach full maturity and carbon absorption capacity.
+      </p>
+    </div>
+
+    <div class="benefit">
+      <h4>📊 Measurable Results</h4>
+      <p>
+        IoT sensors monitor real-time CO₂ levels, oxygen production, 
+        and air quality metrics. Data-driven insights for urban planning.
+      </p>
+    </div>
+
+    <div class="benefit">
+      <h4>🌱 Biomass Production</h4>
+      <p>
+        Harvested microalgae can be used for animal feed, biofuel, 
+        or health supplements, creating additional value streams.
+      </p>
+    </div>
+  </div>
+</div>
 
 <%- include("partials/footer") %>

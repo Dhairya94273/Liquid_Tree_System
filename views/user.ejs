@@ -1,22 +1,62 @@
 <%- include("partials/header") %>
 
-<!-- USER PAGE CSS -->
 <link rel="stylesheet" href="/css/user.css" />
 
-<h2>Check Your Area Air Quality</h2>
+<div class="aqi-container">
+  <h2>Check Your Area Air Quality</h2>
 
-<form id="aqiForm">
-  <input type="text" placeholder="Enter Pincode" required />
-  <select>
-    <option>Residential</option>
-    <option>Industrial</option>
-    <option>Commercial</option>
-    <option>Traffic-heavy</option>
-  </select>
-  <button type="submit">Check AQI</button>
-</form>
+  <form id="aqiForm" class="aqi-form">
+    <input 
+      type="text" 
+      id="pincodeInput"
+      placeholder="Enter 6-digit Pincode" 
+      maxlength="6"
+      required 
+    />
 
-<div id="result"></div>
+    <button type="submit">Check AQI</button>
+  </form>
 
-<script src="/js/user.js"></script>
+  <div id="result" class="aqi-result"></div>
+</div>
+
+<script>
+  document.getElementById("aqiForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const pincode = document.getElementById("pincodeInput").value.trim();
+    const resultDiv = document.getElementById("result");
+
+    if (!/^[0-9]{6}$/.test(pincode)) {
+      resultDiv.innerHTML = "<p style='color:red'>Please enter valid 6-digit pincode</p>";
+      return;
+    }
+
+    resultDiv.innerHTML = "<p>Fetching real-time AQI data...</p>";
+
+    try {
+      const response = await fetch(`/api/real-aqi/${pincode}`);
+      const data = await response.json();
+
+      if (!data.success) {
+        resultDiv.innerHTML = `<p style="color:red">${data.error}</p>`;
+        return;
+      }
+
+      resultDiv.innerHTML = `
+        <div class="aqi-card" style="border-left: 8px solid ${data.color}">
+          <h3>${data.village}, ${data.city}</h3>
+          <p style="font-size: 12px; color: #999;">📍 Pincode: ${data.pincode} | ${data.state}</p>
+          <h1 style="color:${data.color}">${data.aqi}</h1>
+          <p>Status: <strong>${data.level}</strong></p>
+        </div>
+      `;
+
+    } catch (error) {
+      resultDiv.innerHTML = "<p style='color:red'>Unable to fetch AQI data</p>";
+    }
+  });
+
+</script>
+
 <%- include("partials/footer") %>

@@ -1,0 +1,413 @@
+/* BENEFITS PAGE STYLING */
+
+.benefits-hero {
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--text-secondary);
+  position: relative;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(8, 145, 178, 0.05) 100%);
+}
+
+.benefits-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.benefits-hero h1 {
+  font-size: 3rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  letter-spacing: -1px;
+  animation: fadeInUp 0.8s ease;
+}
+
+.benefits-hero h1 .highlight {
+  background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.benefits-hero .lead {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  line-height: 1.8;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* BENEFITS SECTION */
+.benefits-section {
+  max-width: 1300px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.benefits-section.alternate {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.03) 0%, rgba(8, 145, 178, 0.03) 100%);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  padding-left: calc(2rem + 2rem);
+  padding-right: calc(2rem + 2rem);
+}
+
+.benefits-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
+  margin-bottom: 3rem;
+  font-weight: 800;
+  animation: fadeInUp 0.6s ease;
+}
+
+.benefits-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.benefit-card {
+  background: rgba(16, 185, 129, 0.05);
+  border: 1.5px solid rgba(16, 185, 129, 0.15);
+  padding: 2rem;
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  animation: fadeInUp 0.6s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+  background: rgba(16, 185, 129, 0.1);
+  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
+}
+
+.benefit-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.benefit-icon:nth-child(1) { animation-delay: 0.1s; }
+.benefit-icon:nth-child(2) { animation-delay: 0.2s; }
+.benefit-icon:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.benefit-card h3 {
+  color: var(--primary-light);
+  font-size: 1.4rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+}
+
+.benefit-card p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0 0 1rem 0;
+}
+
+.stat {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* MATHEMATICS SECTION */
+.mathematics-section {
+  max-width: 1300px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.mathematics-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.section-description {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.math-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.math-card {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(8, 145, 178, 0.04));
+  border: 1.5px solid rgba(16, 185, 129, 0.2);
+  padding: 2rem;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.6s ease;
+}
+
+.math-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary);
+  box-shadow: 0 15px 35px rgba(16, 185, 129, 0.15);
+}
+
+.math-card h3 {
+  color: var(--primary-light);
+  font-size: 1.3rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.formula {
+  background: rgba(15, 20, 25, 0.8);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--secondary);
+  margin-bottom: 1.5rem;
+  font-family: 'Courier New', monospace;
+}
+
+.formula p {
+  margin: 0.5rem 0;
+  color: var(--primary-light);
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.formula ul {
+  margin: 0.8rem 0 0 0;
+  padding-left: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.formula li {
+  margin: 0.4rem 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.explanation {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+/* CASE STUDY */
+.case-study {
+  max-width: 1300px;
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(8, 145, 178, 0.05) 100%);
+  border-radius: 20px;
+}
+
+.case-study h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  font-weight: 800;
+}
+
+.scenario-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.scenario-content {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  padding: 2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.scenario-content:hover {
+  border-color: var(--primary);
+  background: rgba(16, 185, 129, 0.12);
+  transform: translateY(-4px);
+}
+
+.scenario-content h3 {
+  color: var(--primary-light);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.scenario-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.scenario-list li {
+  color: var(--text-secondary);
+  padding: 0.8rem 0;
+  padding-left: 2rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.scenario-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* CTA SECTION */
+.cta-section {
+  max-width: 800px;
+  margin: 4rem auto;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius: 20px;
+  color: white;
+  animation: fadeInUp 0.8s ease;
+}
+
+.cta-section h2 {
+  font-size: 2.2rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+
+.cta-section p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  line-height: 1.7;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background: white;
+  color: var(--primary);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .benefits-hero h1 {
+    font-size: 2rem;
+  }
+
+  .benefits-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .mathematics-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .benefits-container,
+  .math-content {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits-section.alternate {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

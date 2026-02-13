@@ -1,20 +1,206 @@
+/* MAP PAGE STYLING */
 h2 {
   text-align: center;
-  margin: 2rem 0;
-  color: #bbf7d0;
+  margin: 2.5rem 0 1.5rem 0;
+  color: var(--primary-light);
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  animation: fadeInUp 0.6s ease;
+}
+
+.map-container {
+  padding: 2rem 0;
+  animation: fadeInUp 0.8s ease 0.2s both;
 }
 
 #map {
-  height: 520px;
-  width: 90%;
-  margin: auto;
-  border-radius: 15px;
-  box-shadow: 0 0 25px rgba(0, 255, 150, 0.3);
+  height: 600px;
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.1);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#map:hover {
+  box-shadow: 0 12px 50px rgba(16, 185, 129, 0.3);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.map-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+.map-controls input,
+.map-controls select {
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  background: rgba(16, 185, 129, 0.05);
+  color: var(--text-primary);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.map-controls input:focus,
+.map-controls select:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: rgba(16, 185, 129, 0.1);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+}
+
+.map-controls button {
+  padding: 0.7rem 1.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+}
+
+.map-controls button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
+}
+
+.aqi-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.aqi-card {
+  background: rgba(16, 185, 129, 0.05);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.aqi-card:hover {
+  border-color: rgba(16, 185, 129, 0.3);
+  background: rgba(16, 185, 129, 0.08);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.15);
+}
+
+.aqi-card h3 {
+  margin-top: 0;
+  color: var(--primary-light);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.aqi-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0.5rem 0;
+  background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.aqi-category {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.aqi-legend {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(16, 185, 129, 0.05);
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  animation: fadeInUp 0.8s ease 0.5s both;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.legend-color {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--text-secondary);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 .note {
   text-align: center;
   font-size: 0.85rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   opacity: 0.7;
+  color: var(--text-muted);
+  animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+/* AQI COLOR CODES */
+.aqi-good { color: #22c55e; }
+.aqi-moderate { color: #eab308; }
+.aqi-unhealthy-sensitive { color: #f97316; }
+.aqi-unhealthy { color: #ef4444; }
+.aqi-very-unhealthy { color: #991b1b; }
+.aqi-hazardous { color: #6b21a8; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.5rem;
+    margin: 1.5rem 0 1rem 0;
+  }
+
+  #map {
+    height: 400px;
+    width: 98%;
+  }
+
+  .map-controls {
+    flex-direction: column;
+  }
+
+  .map-controls input,
+  .map-controls select,
+  .map-controls button {
+    width: 100%;
+  }
+
+  .aqi-info {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
+  .aqi-legend {
+    gap: 1rem;
+    padding: 1rem;
+  }
 }

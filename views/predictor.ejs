@@ -1,15 +1,104 @@
 <%- include("partials/header") %>
 
 <!-- PREDICTOR PAGE CSS -->
-<link rel="stylesheet" href="/css/predictor.css" />
+<link rel="stylesheet" href="/css/predicter.css" />
 
 <h2>AQI Predictor</h2>
+<p class="subtitle">Calculate the impact of Liquid Trees on your area's air quality</p>
 
-<input id="currentAQI" type="number" placeholder="Current AQI" />
-<input id="trees" type="number" placeholder="Liquid Trees Count" />
-<button onclick="predict()">Predict</button>
+<div class="predictor-container">
+  <div class="predictor-form">
+    <form id="predictorForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="currentAQI">
+            <span class="label-text">Current AQI Level</span>
+            <span class="label-info">(0-500)</span>
+          </label>
+          <div class="input-wrapper">
+            <input 
+              id="currentAQI" 
+              type="number" 
+              placeholder="Enter current AQI" 
+              min="0" 
+              max="500" 
+              required
+            />
+            <span class="input-icon">📊</span>
+          </div>
+          <small class="input-hint">Current air quality index in your area</small>
+        </div>
 
-<p id="output"></p>
+        <div class="form-group">
+          <label for="trees">
+            <span class="label-text">Liquid Trees Count</span>
+            <span class="label-info">(Units)</span>
+          </label>
+          <div class="input-wrapper">
+            <input 
+              id="trees" 
+              type="number" 
+              placeholder="Enter number of trees" 
+              min="1" 
+              max="10000" 
+              required
+            />
+            <span class="input-icon">🌳</span>
+          </div>
+          <small class="input-hint">Number of Liquid Trees to deploy</small>
+        </div>
+      </div>
 
-<script src="/js/predictor.js"></script>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="areaType">
+            <span class="label-text">Area Type</span>
+            <span class="label-info">(Optional)</span>
+          </label>
+          <div class="select-wrapper">
+            <select id="areaType">
+              <option value="">Select area type...</option>
+              <option value="residential">Residential</option>
+              <option value="commercial">Commercial</option>
+              <option value="industrial">Industrial</option>
+              <option value="traffic-heavy">Traffic Heavy</option>
+              <option value="rural">Rural</option>
+            </select>
+            <span class="select-icon">▼</span>
+          </div>
+          <small class="input-hint">Affects calculation accuracy</small>
+        </div>
+
+        <div class="form-group">
+          <label for="timeline">
+            <span class="label-text">Timeline</span>
+            <span class="label-info">(Years)</span>
+          </label>
+          <div class="input-wrapper">
+            <input 
+              id="timeline" 
+              type="number" 
+              placeholder="1-10" 
+              min="1" 
+              max="10" 
+              value="1"
+              required
+            />
+            <span class="input-icon">📅</span>
+          </div>
+          <small class="input-hint">Projection timeline in years</small>
+        </div>
+      </div>
+
+      <button type="submit" class="predict-button">
+        <span class="button-text">Calculate Impact</span>
+        <span class="button-icon">→</span>
+      </button>
+    </form>
+  </div>
+
+  <div id="output"></div>
+</div>
+
+<script src="/js/predicter.js"></script>
 <%- include("partials/footer") %>

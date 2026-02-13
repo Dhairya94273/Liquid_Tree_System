@@ -4,14 +4,75 @@
 <link rel="stylesheet" href="/css/map.css" />
 
 <h2>India Air Quality Dashboard</h2>
-<div id="map"></div>
 
+<!-- AQI Statistics Cards -->
+<div class="aqi-info"></div>
+
+<!-- Map Controls -->
+<div class="map-controls">
+  <input 
+    type="text" 
+    placeholder="Search by city name..." 
+    style="max-width: 300px;"
+  />
+  <select>
+    <option value="all">All Categories</option>
+    <option value="good">Good (0-50)</option>
+    <option value="moderate">Moderate (51-100)</option>
+    <option value="unhealthy_sensitive">Unhealthy for Sensitive (101-150)</option>
+    <option value="unhealthy">Unhealthy (151-200)</option>
+    <option value="very_unhealthy">Very Unhealthy (201-300)</option>
+    <option value="hazardous">Hazardous (300+)</option>
+  </select>
+  <button onclick="location.reload()">Refresh Data</button>
+</div>
+
+<!-- AQI Legend -->
+<div class="aqi-legend">
+  <div class="legend-item">
+    <div class="legend-color" style="background-color: #22c55e;"></div>
+    <span>Good (0-50)</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-color" style="background-color: #eab308;"></div>
+    <span>Moderate (51-100)</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-color" style="background-color: #f97316;"></div>
+    <span>Unhealthy for Sensitive (101-150)</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-color" style="background-color: #ef4444;"></div>
+    <span>Unhealthy (151-200)</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-color" style="background-color: #991b1b;"></div>
+    <span>Very Unhealthy (201-300)</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-color" style="background-color: #6b21a8;"></div>
+    <span>Hazardous (300+)</span>
+  </div>
+</div>
+
+<!-- Map Container -->
+<div class="map-container">
+  <div id="map"></div>
+</div>
+
+<p class="note">
+  Interactive map showing real-time AQI data across India. 
+  Marker size represents AQI intensity. Click on markers for detailed information.
+</p>
+
+<!-- Leaflet CSS and JS -->
 <link
   rel="stylesheet"
   href="https://unpkg.com/leaflet/dist/leaflet.css"
 />
-
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- Map Script -->
 <script src="/js/map.js"></script>
 
 <%- include("partials/footer") %>

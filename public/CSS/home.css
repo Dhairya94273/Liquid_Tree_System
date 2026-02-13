@@ -1,22 +1,456 @@
 .hero {
-  height: 85vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle at top, #0f3d2e, #041a12);
+  background: linear-gradient(135deg, #0a0e27 0%, #1a3a3a 50%, #0f1419 100%);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 2rem;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: glow 4s ease-in-out infinite;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(8, 145, 178, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: glow 5s ease-in-out 1s infinite;
+}
+
+@keyframes glow {
+  0%, 100% { 
+    opacity: 0.6;
+  }
+  50% { 
+    opacity: 1;
+  }
 }
 
 .hero h1 {
-  font-size: 3rem;
-  color: #a7f3d0;
-  margin-bottom: 1rem;
+  font-size: 4.8rem;
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  letter-spacing: -1.5px;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 0.8s ease 0.2s both;
+  line-height: 1.15;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero h1 .highlight {
+  background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 4px 12px rgba(16, 185, 129, 0.3));
 }
 
 .hero .quote {
-  font-size: 1.3rem;
-  color: #eafff3;
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  opacity: 0.95;
+  max-width: 750px;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 0.8s ease 0.4s both;
+  line-height: 1.9;
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Hero CTAs and stats */
+.hero-ctas { 
+  margin-top: 2.5rem; 
+  display: flex; 
+  gap: 1.5rem; 
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 0.8s ease 0.6s both;
+  flex-wrap: wrap;
+}
+
+.btn { 
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white; 
+  padding: 1.1rem 2.8rem; 
+  border-radius: 12px; 
+  text-decoration: none; 
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  box-shadow: 0 8px 32px rgba(16, 185, 129, 0.35);
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(-100%);
+  transition: var(--transition);
+}
+
+.btn:hover { 
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 16px 50px rgba(16, 185, 129, 0.5);
+}
+
+.btn:hover::before {
+  transform: translateX(100%);
+}
+
+.btn.ghost { 
+  background: transparent; 
+  border: 2.5px solid var(--primary-light);
+  color: var(--primary-light);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+}
+
+.btn.ghost:hover { 
+  background: rgba(16, 185, 129, 0.2);
+  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.35);
+  transform: translateY(-5px) scale(1.02);
+}
+
+.stats { 
+  display: flex; 
+  gap: 3rem; 
+  margin-top: 3rem; 
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 0.8s ease 0.8s both;
+  flex-wrap: wrap;
+}
+
+.stat { 
+  text-align: center; 
+  color: var(--text-secondary);
+  padding: 2.2rem 2rem;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1.5px solid rgba(16, 185, 129, 0.3);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 160px;
+}
+
+.stat:hover {
+  border-color: var(--primary);
+  background: rgba(16, 185, 129, 0.15);
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 12px 36px rgba(16, 185, 129, 0.25);
+}
+
+.stat .num { 
+  font-size: 2.8rem; 
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  color: var(--primary-light);
+  margin-bottom: 0.8rem;
+  background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat .label { 
+  font-size: 0.9rem; 
   opacity: 0.85;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+}
+
+/* Features section */
+.features-section {
+  background: linear-gradient(180deg, rgba(10, 14, 39, 0.5), rgba(26, 58, 58, 0.3));
+  padding: 6rem 2rem;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(16, 185, 129, 0.1);
+}
+
+.features-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(50px);
+  animation: glow 4s ease-in-out infinite;
+  z-index: 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.section-header h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.section-header p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
   max-width: 600px;
+  margin: 0 auto;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.features { 
+  display: flex; 
+  gap: 2.5rem; 
+  justify-content: center; 
+  max-width: 1400px; 
+  margin: 0 auto; 
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.feature { 
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(15, 20, 25, 0.5));
+  padding: 2.8rem 2.5rem;
+  border-radius: 18px; 
+  flex: 1; 
+  min-width: 300px;
+  color: var(--text-secondary);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1.5px solid rgba(16, 185, 129, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.feature:hover { 
+  transform: translateY(-12px) scale(1.02);
+  border-color: var(--primary);
+  box-shadow: 0 20px 50px rgba(16, 185, 129, 0.3);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(15, 20, 25, 0.7));
+}
+
+.feature:hover::before {
+  top: -30%;
+  right: -30%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 70%);
+}
+
+.feature h3 { 
+  margin-top: 0; 
+  color: var(--primary-light);
+  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.feature p {
+  margin: 0;
+  line-height: 1.8;
+  color: var(--text-muted);
+  position: relative;
+  z-index: 2;
+  font-size: 1rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    height: auto;
+    min-height: 85vh;
+    padding: 3rem 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .stats { 
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  .features { 
+    flex-direction: column; 
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  .hero .quote {
+    font-size: 1.1rem;
+    max-width: 90%;
+  }
+
+  .feature {
+    min-height: auto;
+    min-width: auto;
+  }
+
+  .section-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .section-header p {
+    font-size: 1rem;
+  }
+
+  .stat .num {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero .quote {
+    font-size: 1rem;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+
+  .stats {
+    gap: 1rem;
+    padding: 0;
+  }
+
+  .stat {
+    min-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .stat .num {
+    font-size: 1.8rem;
+  }
+
+  .stat .label {
+    font-size: 0.85rem;
+  }
+
+  .features {
+    gap: 1rem;
+    padding: 0;
+  }
+
+  .feature {
+    padding: 2rem 1.5rem;
+  }
+
+  .feature h3 {
+    font-size: 1.2rem;
+  }
+
+  .feature p {
+    font-size: 0.95rem;
+  }
+
+  .features-section {
+    padding: 4rem 1rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .section-header p {
+    font-size: 0.95rem;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
 }

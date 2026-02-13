@@ -1,11 +1,56 @@
 <%- include("partials/header") %>
 <link rel="stylesheet" href="/css/home.css" />
 
+<!-- Hero Section -->
 <section class="hero">
   <h1 id="animatedText"></h1>
   <p class="quote">
-    “Liquid Trees are the future lungs of smart cities.”
+    "Liquid Trees are the future lungs of smart cities."
   </p>
+  
+  <div class="hero-ctas">
+    <a href="/map" class="btn">Explore AQI Map</a>
+    <a href="/predictor" class="btn ghost">Predict Air Quality</a>
+  </div>
+
+  <!-- Stats Section -->
+  <div class="stats">
+    <div class="stat">
+      <div class="num">1.2K+</div>
+      <div class="label">Cities Monitored</div>
+    </div>
+    <div class="stat">
+      <div class="num">50M+</div>
+      <div class="label">Air Readings</div>
+    </div>
+    <div class="stat">
+      <div class="num">30%</div>
+      <div class="label">Better Air Quality</div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section">
+  <div class="section-header">
+    <h2>Why Choose Liquid Trees?</h2>
+    <p>Comprehensive air quality monitoring and prediction solutions</p>
+  </div>
+  
+  <div class="features">
+    <div class="feature">
+      <h3>📍 Real-Time AQI Tracking</h3>
+      <p>Monitor air quality across 1000+ Indian cities with live updates and precision data from ground sensors.</p>
+    </div>
+    <div class="feature">
+      <h3>🔮 AI-Powered Predictions</h3>
+      <p>Leverage machine learning to forecast air quality trends and plan your activities accordingly.</p>
+    </div>
+    <div class="feature">
+      <h3>🌍 Smart Mapping</h3>
+      <p>Interactive maps showing pollution hotspots, safe zones, and real-time environmental data visualization.</p>
+    </div>
+  </div>
 </section>
 
 <script src="/js/home.js"></script>
