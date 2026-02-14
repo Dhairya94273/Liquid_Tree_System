@@ -1,9 +1,11 @@
 // Configuration for the Environmental Monitoring Application
 
+require("dotenv").config();
+
 module.exports = {
   // OpenWeatherMap API Configuration
   openweathermap: {
-    apiKey: process.env.OPENWEATHER_API_KEY || "YOUR_API_KEY_HERE",
+    apiKey: process.env.OPENWEATHER_API_KEY,
     baseUrl: "https://api.openweathermap.org/data/2.5",
     endpoints: {
       airPollution: "/air_pollution",
@@ -13,12 +15,9 @@ module.exports = {
 
   // Scheduled Update Configuration
   scheduledUpdates: {
-    enabled: process.env.ENABLE_SCHEDULED_UPDATES === "true" || false,
-    // Update interval in minutes (default: 60 minutes = 1 hour)
+    enabled: process.env.ENABLE_SCHEDULED_UPDATES === "true",
     intervalMinutes: parseInt(process.env.UPDATE_INTERVAL_MINUTES) || 60,
-    // Batch size for API requests (to avoid rate limiting)
     batchSize: 10,
-    // Delay between requests in milliseconds
     requestDelayMs: 1200
   },
 
@@ -32,7 +31,7 @@ module.exports = {
   // Server Configuration
   server: {
     port: process.env.PORT || 3000,
-    host: process.env.HOST || "0.0.0.0",
+    host: "0.0.0.0",
     environment: process.env.NODE_ENV || "development"
   },
 
@@ -42,15 +41,15 @@ module.exports = {
     format: "json"
   },
 
-  // Area Type Multipliers for AQI Calculation
+  // Area Type Multipliers
   areaMultipliers: {
-    "Residential": 1.0,
-    "Industrial": 1.5,
-    "Commercial": 1.2,
+    Residential: 1.0,
+    Industrial: 1.5,
+    Commercial: 1.2,
     "Traffic-heavy": 1.3
   },
 
-  // AQI Categories for Health Recommendations
+  // AQI Categories
   aqiCategories: {
     good: { min: 0, max: 50 },
     moderate: { min: 51, max: 100 },
